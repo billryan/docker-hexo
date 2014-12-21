@@ -14,11 +14,11 @@ RUN apt-get update && \
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
-# Install Hexo
-RUN npm install -g hexo@2.8.3
-
 # Install pandoc[Optional]
-#RUN apt-get install -y pandoc
+RUN apt-get install -y pandoc
+
+# Install Hexo
+RUN npm install -g hexo
 
 # add non-root user
 #RUN groupadd hexo && useradd -m -g hexo hexo
