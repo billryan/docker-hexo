@@ -18,7 +18,7 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g hexo@2.8.3
 
 # Install pandoc[Optional]
-#RUN apt-get install pandoc
+#RUN apt-get install -y pandoc
 
 # add non-root user
 #RUN groupadd hexo && useradd -m -g hexo hexo
