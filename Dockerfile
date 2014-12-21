@@ -13,7 +13,7 @@ RUN apt-get update && \
     apt-get install -y git-core nodejs npm
 
 # Install Hexo
-RUN npm install -g hexo
+RUN npm install -g hexo@2.8.3
 
 # Install pandoc[Optional]
 #RUN apt-get install pandoc
