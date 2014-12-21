@@ -15,7 +15,7 @@ RUN apt-get update && \
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 # Install pandoc[Optional]
-RUN apt-get install -y pandoc
+#RUN apt-get install -y pandoc
 
 # Install Hexo
 RUN npm install -g hexo
