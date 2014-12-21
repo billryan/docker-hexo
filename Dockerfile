@@ -12,6 +12,8 @@ MAINTAINER Yuan Bin <me@yuanbin.me>
 RUN apt-get update && \
     apt-get install -y git-core nodejs npm
 
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
 # Install Hexo
 RUN npm install -g hexo@2.8.3
 
