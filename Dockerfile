@@ -5,15 +5,22 @@
 #
 
 # Pull base image.
-FROM dockerfile/nodejs
+FROM ubuntu:14.04
 MAINTAINER Yuan Bin <me@yuanbin.me>
+
+# Install git and nodejs
+RUN apt-get update && \
+    apt-get install -y git-core nodejs npm
 
 # Install Hexo
 RUN npm install -g hexo
 
+# Install pandoc[Optional]
+#RUN apt-get install pandoc
+
 # add non-root user
 #RUN groupadd hexo && useradd -m -g hexo hexo
-# replace git add uid with your currently $GID and $UID
+# replace gid and uid with your currently $GID and $UID
 RUN useradd -m -g 100 -u 1000 hexo
 
 ENV HOME /home/hexo
@@ -26,10 +33,6 @@ EXPOSE 4000
 
 WORKDIR /blog
 
-#COPY user_mapping.sh /usr/bin/user_mapping.sh
-#RUN chmod 755 /usr/bin/user_mapping.sh
-
-#CMD ["user_mapping.sh"]
 #ENTRYPOINT ["hexo"]
 
 USER hexo
